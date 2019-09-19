@@ -1,7 +1,7 @@
 #require_relative './song'
 
 class Artist
-    attr_accessor :name, :songs
+    attr_accessor :name
 
     def initialize(name)
         @name = name
@@ -21,9 +21,6 @@ class Artist
     end
 
     def self.song_count
-        artist_songs = Song.all.select do |song|
-            song.artist = self
-        end
-        artist_songs.length
+        Song.all.count
     end
 end

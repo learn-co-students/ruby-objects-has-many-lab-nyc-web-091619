@@ -21,9 +21,6 @@ class Author
     end
 
     def self.post_count
-        artist_posts = Post.all.select do |post|
-            post.author = self
-        end
-        artist_posts.length
+        Post.all.count
     end
 end
